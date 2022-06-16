@@ -1,0 +1,35 @@
+.objective-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.objective-page > div {
+    flex: 1;
+    max-width: 500px;
+}
+
+.objective-page > div:first-of-type {
+    margin-bottom: -24px !important;
+}
+
+
+.objective-title {
+    text-align: center;
+    margin: 0;
+    color: white;
+    font-size: 72px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.objective-subtitle {
+    text-align: center;
+    margin: 0;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
