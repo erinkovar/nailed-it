@@ -1,5 +1,4 @@
 import React from 'react';
-import Lottie from 'react-lottie';
 import Devs from '../../lotties/developers.json';
 import './home.css';
 
@@ -12,7 +11,10 @@ function HomePage() {
 
   return (
     <div className="home-page">
-      <div></div>
+      <div>
+        <button id="addPlinko">Add Plinko</button>
+
+      </div>
     </div>
   );
 }

@@ -48,7 +48,14 @@ function setup() {
 
   Events.on(engine, 'collisionStart', collision);
 
-  newParticle();
+
+  var button = document.getElementById('addPlinko');
+  if(button) {
+    button.addEventListener("click", () => {
+      randomNum();
+      newParticle();
+    });
+  }
   var spacing = width / cols;
   for (var j = 0; j < rows; j++) {
     for (var i = 0; i < cols + 1; i++) {
@@ -77,16 +84,21 @@ function setup() {
 
 
 }
+var randomStart = null;
+function randomNum() {
+  randomStart = Math.floor(Math.random()*600);
+}
 
+console.log(randomStart);
 function newParticle() {
-  var p = new Particle(300, 0, 10);
+  var p = new Particle(randomStart, 0, 10);
   particles.push(p);
 }
 
 function draw() {
   background(0, 0, 0);
   if (frameCount % 20 == 0) {
-    newParticle();
+    // newParticle();
   }
   Engine.update(engine, 1000 / 30);
   for (var i = 0; i < particles.length; i++) {
