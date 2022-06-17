@@ -165,6 +165,12 @@ function draw() {
       valueArray.length = particles.length;
       console.log({ valueArray });
       
+      if (valueArray.length < 10) {
+        var moreinfo = document.getElementById('moreInfo');
+        moreinfo.style.display = "block";
+
+
+      }
       if (particles.length > 9) {
         // run array logic to figure out which route to pick
         // then push to the route

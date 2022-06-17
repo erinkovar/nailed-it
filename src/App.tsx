@@ -13,7 +13,7 @@ function App() {
       </nav>
       <div className="app-content">
         <Outlet />
-        <div className="moreInfo">
+        <div id="moreInfo" className="moreInfo">
           Need more information, please try again.
         </div>
         

@@ -24,6 +24,7 @@
   color: white;
   font-size: 20px;
   text-decoration: none;
+  pointer-events: none;
 }
 
 .app-nav a.active {
