@@ -13,6 +13,10 @@ function App() {
       </nav>
       <div className="app-content">
         <Outlet />
+        <div id="moreInfo" className="moreInfo">
+          Need more information, please try again.
+        </div>
+        
       </div>
       <footer>
         <p>Credera ♥️ XD</p>

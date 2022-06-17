@@ -199,6 +199,12 @@ function draw() {
       valueArray.length = particles.length;
       console.log({ valueArray });
       
+      if (valueArray.length < 10) {
+        var moreinfo = document.getElementById('moreInfo');
+        moreinfo.style.display = "block";
+
+
+      }
       if (particles.length > 9) {
         const highestPickedBucket = findMostCommonValue(valueArray);
 
