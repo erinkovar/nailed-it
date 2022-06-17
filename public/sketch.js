@@ -30,7 +30,7 @@ function setup() {
   colorMode(HSB);
   engine = Engine.create();
   world = engine.world;
-  world.gravity.y = 0.2;
+  // world.gravity.y = 0.1;
 
   function collision(event) {
     var pairs = event.pairs;
@@ -61,11 +61,10 @@ function setup() {
   if(defaultCanvas) {
 
       console.log(defaultCanvas);
-      console.log("working?");
       var ctx = defaultCanvas.getContext("2d");
-      console.log(ctx);
+
       ctx.strokeStyle = "1px solid #ffffff";
-      console.log(ctx);
+
       ctx.fillRect(0, 0, defaultCanvas.width, defaultCanvas.height);
 
       ctx.fillStyle = "white";
