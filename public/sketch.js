@@ -113,8 +113,11 @@ function newParticle() {
   particles.push(p);
 }
 
-function activateNavItem(value) {
+function pushRoute(id) {
+  document.getElementById(id).click();
+}
 
+function activateNavItem(value) {
   const allNavItems = document.querySelectorAll('.nav');
   const removeAllItems = () => {
     allNavItems.forEach(navItem => {
@@ -137,6 +140,8 @@ function activateNavItem(value) {
   }
 }
 
+const valueArray = [];
+
 function draw() {
   background("#628FC3");
   if (frameCount % 20 == 0) {
@@ -150,7 +155,23 @@ function draw() {
       particles.splice(i, 1);
       i--;
     }
-    activateNavItem(particles[i].body.region.endCol);
+    if(particles[i]?.body) {
+      activateNavItem(particles[i]?.body?.region?.endCol);
+    }
+
+    let yPosition = Math.trunc(particles[i].body.position.y);
+    if (yPosition < 690 && yPosition > 688) {
+      valueArray.splice(particles.length -1, 0, particles[i].body.region.endCol);
+      valueArray.length = particles.length;
+      console.log({ valueArray });
+      
+      if (particles.length > 9) {
+        // run array logic to figure out which route to pick
+        // then push to the route
+        // pushRoute takes parameters: 'home', 'about', 'team', 'objective'
+        pushRoute('team')
+      }
+    }
   }
   for (var i = 0; i < plinkos.length; i++) {
     plinkos[i].show();
