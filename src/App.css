@@ -15,12 +15,18 @@
   justify-content: space-around;
   height: 64px;
   width: 100%;
+  position: absolute;
+  top: 740px;
 }
 
 .app-nav > a {
   color: white;
   font-size: 20px;
   text-decoration: none;
+}
+
+.app-nav a.active {
+  background: green;
 }
 
 footer {
