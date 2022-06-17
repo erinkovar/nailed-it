@@ -44,7 +44,6 @@ footer {
 footer > p {
   color: white;
 }
-<<<<<<< HEAD
 
 @keyframes expand {
   from {
@@ -63,13 +62,13 @@ footer > p {
   z-index: 999;
   position: absolute;
   margin-top: 64px;
-=======
+}
+
 .moreInfo {
   display: none;
   position:absolute;
   right: 10vw;
   width: 250px;
   top: 30vh;
->>>>>>> origin
 }
 
