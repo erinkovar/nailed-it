@@ -126,21 +126,19 @@ function activateNavItem(value) {
   if (value === 1 || value === 2 || value === 3) {
     removeAllItems();
     document.getElementById('home').classList.add('active');
-    pushRoute('home');
   } else if (value === 4 || value === 5 || value === 6) {
     removeAllItems();
     document.getElementById('about').classList.add('active');
-    pushRoute('about');
   } else if (value === 7 || value === 8 || value === 9) {
     removeAllItems();
     document.getElementById('team').classList.add('active');
-    pushRoute('team');
   } else if (value === 10 || value === 11 || value === 12) {
     removeAllItems();
     document.getElementById('objective').classList.add('active');
-    pushRoute('objective');
   }
 }
+
+const valueArray = [];
 
 function draw() {
   background("#628FC3");
@@ -155,7 +153,24 @@ function draw() {
       particles.splice(i, 1);
       i--;
     }
-    activateNavItem(particles[i].body.region.endCol);
+    if(particles[i]?.body) {
+      activateNavItem(particles[i]?.body?.region?.endCol);
+    }
+
+    let yPosition = Math.trunc(particles[i].body.position.y);
+    if (yPosition < 690 && yPosition > 688) {
+      valueArray.splice(particles.length -1, 0, particles[i].body.region.endCol);
+      valueArray.length = particles.length;
+      console.log({ valueArray });
+      console.log('length', particles.length);
+      if (particles.length > 9) {
+        console.log('testing')
+        // run array logic to figure out which route to pick
+        // then push to the route
+        // pushRoute takes parameters: 'home', 'about', 'team', 'objective'
+        pushRoute('team')
+      }
+    }
   }
   for (var i = 0; i < plinkos.length; i++) {
     plinkos[i].show();
