@@ -56,6 +56,7 @@ function setup() {
       newParticle();
     });
   }
+
   var spacing = width / cols;
   for (var j = 0; j < rows; j++) {
     for (var i = 0; i < cols + 1; i++) {
@@ -89,14 +90,13 @@ function randomNum() {
   randomStart = Math.floor(Math.random()*600);
 }
 
-console.log(randomStart);
 function newParticle() {
   var p = new Particle(randomStart, 0, 10);
   particles.push(p);
 }
 
 function draw() {
-  background(0, 0, 0);
+  background("#628FC3");
   if (frameCount % 20 == 0) {
     // newParticle();
   }
