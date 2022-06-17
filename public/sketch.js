@@ -30,7 +30,7 @@ function setup() {
   colorMode(HSB);
   engine = Engine.create();
   world = engine.world;
-  //world.gravity.y = 2;
+  world.gravity.y = 0.1;
 
   function collision(event) {
     var pairs = event.pairs;
@@ -68,6 +68,9 @@ function setup() {
       console.log(ctx);
       ctx.fillRect(0, 0, defaultCanvas.width, defaultCanvas.height);
 
+      ctx.fillStyle = "white";
+      ctx.font = "bold 18px Arial";
+      ctx.strokeText("Text", 50, 50);
     
 
   }

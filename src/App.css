@@ -1,7 +1,8 @@
 .app {
-  min-height: 100vh;
+  min-height: 110vh;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .app-content {
@@ -16,7 +17,7 @@
   height: 64px;
   width: 100%;
   position: absolute;
-  top: 740px;
+  bottom: 0px;
 }
 
 .app-nav > a {
