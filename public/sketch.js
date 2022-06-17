@@ -140,6 +140,28 @@ function activateNavItem(value) {
   }
 }
 
+function findMostCommonValue(array)
+{
+    if(array.length == 0)
+        return null;
+    var modeMap = {};
+    var maxEl = array[0], maxCount = 1;
+    for(var i = 0; i < array.length; i++)
+    {
+        var el = array[i];
+        if(modeMap[el] == null)
+            modeMap[el] = 1;
+        else
+            modeMap[el]++;  
+        if(modeMap[el] > maxCount)
+        {
+            maxEl = el;
+            maxCount = modeMap[el];
+        }
+    }
+    return maxEl;
+}
+
 const valueArray = [];
 
 function draw() {
@@ -155,9 +177,9 @@ function draw() {
       particles.splice(i, 1);
       i--;
     }
-    if(particles[i]?.body) {
-      activateNavItem(particles[i]?.body?.region?.endCol);
-    }
+    // if(particles[i]?.body) {
+    //   activateNavItem(particles[i]?.body?.region?.endCol);
+    // }
 
     let yPosition = Math.trunc(particles[i].body.position.y);
     if (yPosition < 690 && yPosition > 688) {
@@ -178,6 +200,22 @@ function draw() {
       console.log({ valueArray });
       
       if (particles.length > 9) {
+        const highestPickedBucket = findMostCommonValue(valueArray);
+
+        switch(highestPickedBucket) {
+          case 1:
+            pushRoute('home');
+            break;
+          case 2:
+            pushRoute('about');
+            break;
+            case 3:
+              pushRoute('team');
+              break;
+            case 4:
+              pushRoute('objective');
+              break;
+        }
         // run array logic to figure out which route to pick
         // then push to the route
         // pushRoute takes parameters: 'home', 'about', 'team', 'objective'
