@@ -44,14 +44,15 @@ footer > p {
     height: 0px;
   }
   to {
-    height: 750px;
+    height: 720px;
   }
 }
 
 #plinko {
   width: 100%;
-  background-color: bisque;
-  height: 750px;
+  background-color: #457fca;
+  border: 1px solid rgba(255, 255, 255, 0.382);
+  height: 720px;
   z-index: 999;
   position: absolute;
   margin-top: 64px;
