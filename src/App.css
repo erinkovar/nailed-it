@@ -40,5 +40,9 @@ footer {
 footer > p {
   color: white;
 }
-
+.moreInfo {
+  position:absolute;
+  right: 30px;
+  width: 250px;
+}
 
