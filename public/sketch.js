@@ -111,6 +111,30 @@ function newParticle() {
   particles.push(p);
 }
 
+function activateNavItem(value) {
+
+  const allNavItems = document.querySelectorAll('.nav');
+  const removeAllItems = () => {
+    allNavItems.forEach(navItem => {
+      navItem.classList.remove('active');
+    });
+  }
+
+  if (value === 1 || value === 2 || value === 3) {
+    removeAllItems();
+    document.getElementById('home').classList.add('active');
+  } else if (value === 4 || value === 5 || value === 6) {
+    removeAllItems();
+    document.getElementById('about').classList.add('active');
+  } else if (value === 7 || value === 8 || value === 9) {
+    removeAllItems();
+    document.getElementById('team').classList.add('active');
+  } else if (value === 10 || value === 11 || value === 12) {
+    removeAllItems();
+    document.getElementById('objective').classList.add('active');
+  }
+}
+
 function draw() {
   background("#628FC3");
   if (frameCount % 20 == 0) {
@@ -124,6 +148,7 @@ function draw() {
       particles.splice(i, 1);
       i--;
     }
+    activateNavItem(particles[i].body.region.endCol);
   }
   for (var i = 0; i < plinkos.length; i++) {
     plinkos[i].show();
