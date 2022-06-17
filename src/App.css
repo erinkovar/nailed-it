@@ -68,7 +68,7 @@ footer > p {
 .moreInfo {
   display: none;
   position:absolute;
-  right: 10vw;
+  right: 2vw;
   width: 250px;
   top: 30vh;
 }
@@ -80,4 +80,6 @@ footer > p {
   margin-left: 10vw;
   margin-right: 10vw;
 }
-
+#nav-items a {
+  pointer-events: none;
+}
