@@ -111,8 +111,11 @@ function newParticle() {
   particles.push(p);
 }
 
-function activateNavItem(value) {
+function pushRoute(id) {
+  document.getElementById(id).click();
+}
 
+function activateNavItem(value) {
   const allNavItems = document.querySelectorAll('.nav');
   const removeAllItems = () => {
     allNavItems.forEach(navItem => {
@@ -123,15 +126,19 @@ function activateNavItem(value) {
   if (value === 1 || value === 2 || value === 3) {
     removeAllItems();
     document.getElementById('home').classList.add('active');
+    pushRoute('home');
   } else if (value === 4 || value === 5 || value === 6) {
     removeAllItems();
     document.getElementById('about').classList.add('active');
+    pushRoute('about');
   } else if (value === 7 || value === 8 || value === 9) {
     removeAllItems();
     document.getElementById('team').classList.add('active');
+    pushRoute('team');
   } else if (value === 10 || value === 11 || value === 12) {
     removeAllItems();
     document.getElementById('objective').classList.add('active');
+    pushRoute('objective');
   }
 }
 
