@@ -50,7 +50,7 @@ footer > p {
     height: 0px;
   }
   to {
-    height: 720px;
+    height: 800px;
   }
 }
 
@@ -58,10 +58,11 @@ footer > p {
   width: 100%;
   background-color: #457fca;
   border: 1px solid rgba(255, 255, 255, 0.382);
-  height: 720px;
+  height: 800px;
   z-index: 999;
   position: absolute;
   margin-top: 64px;
+  text-align: center;
 }
 
 .moreInfo {
@@ -70,5 +71,13 @@ footer > p {
   right: 10vw;
   width: 250px;
   top: 30vh;
+}
+
+#nav-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 10vw;
+  margin-right: 10vw;
 }
 

@@ -22,10 +22,16 @@ function NavDropDown() {
             <div style={isActivated ? activeStyle : hiddenStyle } id="plinkoContainer"> 
                 <button id="addPlinko">Add Plinko</button> 
                 <div id="plinko" ></div>
-                <Link className="nav" to="thanks">Thank You</Link>
-                <Link className="nav" to="objective">Objective</Link>
-                <Link className="nav" to="teams">Teams</Link>
-                <Link className="nav" to="/">Home</Link>
+                <div id="moreInfo" className="moreInfo">
+                    Need more information, please try again.
+                </div>
+                <div id="nav-items">
+                    <Link className="nav" to="thanks">Thank You</Link>
+                    <Link className="nav" to="objective">Objective</Link>
+                    <Link className="nav" to="teams">Teams</Link>
+                    <Link className="nav" to="/">Home</Link>
+                </div>
+                
             </div>
         </>
     );

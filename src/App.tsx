@@ -9,9 +9,6 @@ function App() {
       <NavDropDown></NavDropDown>
       <div className="app-content">
         <Outlet />
-        <div id="moreInfo" className="moreInfo">
-          Need more information, please try again.
-        </div>
         
       </div>
       <footer>
