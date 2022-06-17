@@ -59,10 +59,7 @@ function setup() {
 
   var defaultCanvas = document.getElementById('defaultCanvas0');
   if(defaultCanvas) {
-
-      console.log(defaultCanvas);
       var ctx = defaultCanvas.getContext("2d");
-
       ctx.strokeStyle = "1px solid #ffffff";
 
       ctx.fillRect(0, 0, defaultCanvas.width, defaultCanvas.height);
@@ -113,6 +110,7 @@ function newParticle() {
   particles.push(p);
 }
 
+/*
 function activateNavItem(value) {
 
   const allNavItems = document.querySelectorAll('.nav');
@@ -136,7 +134,7 @@ function activateNavItem(value) {
     document.getElementById('objective').classList.add('active');
   }
 }
-
+*/
 function draw() {
   background("#628FC3");
   if (frameCount % 20 == 0) {
@@ -150,7 +148,7 @@ function draw() {
       particles.splice(i, 1);
       i--;
     }
-    activateNavItem(particles[i].body.region.endCol);
+    //activateNavItem(particles[i].body.region.endCol);
   }
   for (var i = 0; i < plinkos.length; i++) {
     plinkos[i].show();
