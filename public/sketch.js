@@ -164,9 +164,8 @@ function draw() {
       valueArray.splice(particles.length -1, 0, particles[i].body.region.endCol);
       valueArray.length = particles.length;
       console.log({ valueArray });
-      console.log('length', particles.length);
+      
       if (particles.length > 9) {
-        console.log('testing')
         // run array logic to figure out which route to pick
         // then push to the route
         // pushRoute takes parameters: 'home', 'about', 'team', 'objective'
