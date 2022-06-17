@@ -28,6 +28,10 @@
   text-decoration: none;
 }
 
+.app-nav a.active {
+  background: green;
+}
+
 footer {
   width: 100%;
   display: flex;

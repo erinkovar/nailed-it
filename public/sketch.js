@@ -48,7 +48,31 @@ function setup() {
 
   Events.on(engine, 'collisionStart', collision);
 
-  newParticle();
+
+  var button = document.getElementById('addPlinko');
+  if(button) {
+    button.addEventListener("click", () => {
+      randomNum();
+      newParticle();
+    });
+  }
+
+  var defaultCanvas = document.getElementById('defaultCanvas0');
+  if(defaultCanvas) {
+
+      console.log(defaultCanvas);
+      console.log("working?");
+      var ctx = defaultCanvas.getContext("2d");
+      console.log(ctx);
+      ctx.strokeStyle = "1px solid #ffffff";
+      console.log(ctx);
+      ctx.fillRect(0, 0, defaultCanvas.width, defaultCanvas.height);
+
+    
+
+  }
+
+
   var spacing = width / cols;
   for (var j = 0; j < rows; j++) {
     for (var i = 0; i < cols + 1; i++) {
@@ -77,16 +101,44 @@ function setup() {
 
 
 }
+var randomStart = null;
+function randomNum() {
+  randomStart = Math.floor(Math.random()*600);
+}
 
 function newParticle() {
-  var p = new Particle(300, 0, 10);
+  var p = new Particle(randomStart, 0, 10);
   particles.push(p);
 }
 
+function activateNavItem(value) {
+
+  const allNavItems = document.querySelectorAll('.nav');
+  const removeAllItems = () => {
+    allNavItems.forEach(navItem => {
+      navItem.classList.remove('active');
+    });
+  }
+
+  if (value === 1 || value === 2 || value === 3) {
+    removeAllItems();
+    document.getElementById('home').classList.add('active');
+  } else if (value === 4 || value === 5 || value === 6) {
+    removeAllItems();
+    document.getElementById('about').classList.add('active');
+  } else if (value === 7 || value === 8 || value === 9) {
+    removeAllItems();
+    document.getElementById('team').classList.add('active');
+  } else if (value === 10 || value === 11 || value === 12) {
+    removeAllItems();
+    document.getElementById('objective').classList.add('active');
+  }
+}
+
 function draw() {
-  background(0, 0, 0);
+  background("#628FC3");
   if (frameCount % 20 == 0) {
-    newParticle();
+    // newParticle();
   }
   Engine.update(engine, 1000 / 30);
   for (var i = 0; i < particles.length; i++) {
@@ -96,6 +148,7 @@ function draw() {
       particles.splice(i, 1);
       i--;
     }
+    activateNavItem(particles[i].body.region.endCol);
   }
   for (var i = 0; i < plinkos.length; i++) {
     plinkos[i].show();

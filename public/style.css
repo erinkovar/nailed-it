@@ -4,6 +4,8 @@ html, body {
 }
 canvas {
   display: block;
+  padding: 6px;
+  background-color: #fff;
 }
 
 #hide {
