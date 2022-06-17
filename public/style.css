@@ -5,3 +5,8 @@ html, body {
 canvas {
   display: block;
 }
+
+#hide {
+  display: none;
+  overflow: hidden;
+}

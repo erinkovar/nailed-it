@@ -1,16 +1,12 @@
 import "./App.css";
 import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
+import NavDropDown from "./NavDropDown"
 
 function App() {
   return (
     <div className="app">
-      <nav className="app-nav">
-        <Link to="thanks">Thank You</Link>
-        <Link to="objective">Objective</Link>
-        <Link to="teams">Teams</Link>
-        <Link to="/">Home</Link>
-      </nav>
+      <NavDropDown></NavDropDown>
       <div className="app-content">
         <Outlet />
       </div>
@@ -20,5 +16,12 @@ function App() {
     </div>
   );
 }
+
+/**
+ *  <Link to="thanks">Thank You</Link>
+        <Link to="objective">Objective</Link>
+        <Link to="teams">Teams</Link>
+        <Link to="/">Home</Link>
+ */
 
 export default App;

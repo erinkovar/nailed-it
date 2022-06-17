@@ -15,6 +15,11 @@
   justify-content: space-around;
   height: 64px;
   width: 100%;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.382);
+  cursor: pointer;
 }
 
 .app-nav > a {
@@ -34,4 +39,19 @@ footer > p {
   color: white;
 }
 
+@keyframes expand {
+  from {
+    height: 20px;
+  }
+  to {
+    height: 500px;
+  }
+}
+
+#plinko {
+  width: 100%;
+  background-color: bisque;
+  animation: 0.5s ease expand;
+  height: 500px;
+}
 

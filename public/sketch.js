@@ -26,7 +26,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(600, 700);
+  createCanvas(600, 700).parent("plinko");
   colorMode(HSB);
   engine = Engine.create();
   world = engine.world;
