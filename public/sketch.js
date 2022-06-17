@@ -222,7 +222,7 @@ function draw() {
         // run array logic to figure out which route to pick
         // then push to the route
         // pushRoute takes parameters: 'home', 'about', 'team', 'objective'
-        pushRoute('team')
+        // pushRoute('team')
       }
     }
   }
