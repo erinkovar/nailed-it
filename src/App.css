@@ -41,8 +41,10 @@ footer > p {
   color: white;
 }
 .moreInfo {
+  display: none;
   position:absolute;
-  right: 30px;
+  right: 10vw;
   width: 250px;
+  top: 30vh;
 }
 
