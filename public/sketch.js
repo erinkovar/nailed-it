@@ -140,7 +140,7 @@ function activateNavItem(value) {
 function draw() {
   background("#628FC3");
   if (frameCount % 20 == 0) {
-    // newParticle();
+    //newParticle();
   }
   Engine.update(engine, 1000 / 30);
   for (var i = 0; i < particles.length; i++) {

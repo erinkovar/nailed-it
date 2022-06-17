@@ -20,7 +20,7 @@ function NavDropDown() {
             </nav>
             <div style={isActivated ? activeStyle : hiddenStyle } id="plinkoContainer"> 
                 <button id="addPlinko">Add Plinko</button> 
-                <div id="plinko"></div>
+                <div id="plinko" ></div>
             </div>
         </>
     );
