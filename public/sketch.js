@@ -110,9 +110,11 @@ function newParticle() {
   particles.push(p);
 }
 
-/*
-function activateNavItem(value) {
+function pushRoute(id) {
+  document.getElementById(id).click();
+}
 
+function activateNavItem(value) {
   const allNavItems = document.querySelectorAll('.nav');
   const removeAllItems = () => {
     allNavItems.forEach(navItem => {
@@ -134,7 +136,9 @@ function activateNavItem(value) {
     document.getElementById('objective').classList.add('active');
   }
 }
-*/
+
+const valueArray = [];
+
 function draw() {
   background("#628FC3");
   if (frameCount % 20 == 0) {
@@ -148,7 +152,41 @@ function draw() {
       particles.splice(i, 1);
       i--;
     }
-    //activateNavItem(particles[i].body.region.endCol);
+    if(particles[i]?.body) {
+      activateNavItem(particles[i]?.body?.region?.endCol);
+    }
+
+    let yPosition = Math.trunc(particles[i].body.position.y);
+    if (yPosition < 690 && yPosition > 688) {
+      let replaceValue;
+
+      if (particles[i].body.region.endCol === 1 || particles[i].body.region.endCol === 2 || particles[i].body.region.endCol === 3) {
+        replaceValue = 1;
+      } else if (particles[i].body.region.endCol === 4 || particles[i].body.region.endCol === 5 || particles[i].body.region.endCol === 6) {
+        replaceValue = 2;
+      } else if (particles[i].body.region.endCol === 7 || particles[i].body.region.endCol === 8 || particles[i].body.region.endCol === 9) {
+        replaceValue = 3;
+      } else if (particles[i].body.region.endCol === 10 || particles[i].body.region.endCol === 11 || particles[i].body.region.endCol === 12) {
+        replaceValue = 4;
+      }
+
+      valueArray.splice(particles.length -1, 0, replaceValue);
+      valueArray.length = particles.length;
+      console.log({ valueArray });
+      
+      if (valueArray.length < 10) {
+        var moreinfo = document.getElementById('moreInfo');
+        moreinfo.style.display = "block";
+
+
+      }
+      if (particles.length > 9) {
+        // run array logic to figure out which route to pick
+        // then push to the route
+        // pushRoute takes parameters: 'home', 'about', 'team', 'objective'
+        pushRoute('team')
+      }
+    }
   }
   for (var i = 0; i < plinkos.length; i++) {
     plinkos[i].show();
