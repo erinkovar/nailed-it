@@ -26,10 +26,10 @@ function NavDropDown() {
                     Need more information, please try again.
                 </div>
                 <div id="nav-items">
-                    <Link className="nav" to="thanks">Thank You</Link>
-                    <Link className="nav" to="objective">Objective</Link>
-                    <Link className="nav" to="teams">Teams</Link>
-                    <Link className="nav" to="/">Home</Link>
+                    <Link className="nav" id="home" to="thanks">Thank You</Link>
+                    <Link className="nav" id="about" to="objective">Objective</Link>
+                    <Link className="nav" id="team" to="teams">Teams</Link>
+                    <Link className="nav" id="objective" to="/">Home</Link>
                 </div>
                 
             </div>
