@@ -41,17 +41,19 @@ footer > p {
 
 @keyframes expand {
   from {
-    height: 20px;
+    height: 0px;
   }
   to {
-    height: 500px;
+    height: 750px;
   }
 }
 
 #plinko {
   width: 100%;
   background-color: bisque;
-  animation: 0.5s ease expand;
-  height: 500px;
+  height: 750px;
+  z-index: 999;
+  position: absolute;
+  margin-top: 64px;
 }
 
