@@ -6,10 +6,10 @@ function App() {
   return (
     <div className="app">
       <nav className="app-nav">
-        <Link to="/">Home</Link>
+        <Link to="thanks">Thank You</Link>
         <Link to="objective">Objective</Link>
         <Link to="teams">Teams</Link>
-        <Link to="thanks">Thank You</Link>
+        <Link to="/">Home</Link>
       </nav>
       <div className="app-content">
         <Outlet />
