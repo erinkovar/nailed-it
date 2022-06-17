@@ -52,7 +52,7 @@ footer > p {
   }
 }
 
-#plinko {
+#plinkoContainer {
   width: 100%;
   background-color: #457fca;
   border: 1px solid rgba(255, 255, 255, 0.382);

@@ -12,7 +12,7 @@ function HomePage() {
   return (
     <div className="home-page">
       <div>
-        <button id="addPlinko">Add Plinko</button>
+        
 
       </div>
     </div>

@@ -18,7 +18,10 @@ function NavDropDown() {
             <nav onClick={() => {setActivation(!isActivated)}} className="app-nav" >
             {isActivated ? "↑ Menu ↑" : "↓ Menu ↓"}
             </nav>
-            <div style={isActivated ? activeStyle : hiddenStyle } id="plinko"> Hey </div>
+            <div style={isActivated ? activeStyle : hiddenStyle } id="plinkoContainer"> 
+                <button id="addPlinko">Add Plinko</button> 
+                <div id="plinko"></div>
+            </div>
         </>
     );
 }
