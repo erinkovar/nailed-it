@@ -5,9 +5,7 @@ body {
   font-family: 'Roboto Mono', monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #457fca;  
-  background: -webkit-linear-gradient(to right, #5691c8, #457fca);  
-  background: linear-gradient(to right, #5691c8, #457fca); 
+  background: #628FC3;  
   
 }
 

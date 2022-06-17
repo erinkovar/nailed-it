@@ -57,6 +57,22 @@ function setup() {
     });
   }
 
+  var defaultCanvas = document.getElementById('defaultCanvas0');
+  if(defaultCanvas) {
+
+      console.log(defaultCanvas);
+      console.log("working?");
+      var ctx = defaultCanvas.getContext("2d");
+      console.log(ctx);
+      ctx.strokeStyle = "1px solid #ffffff";
+      console.log(ctx);
+      ctx.fillRect(0, 0, defaultCanvas.width, defaultCanvas.height);
+
+    
+
+  }
+
+
   var spacing = width / cols;
   for (var j = 0; j < rows; j++) {
     for (var i = 0; i < cols + 1; i++) {
